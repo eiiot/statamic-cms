@@ -33,6 +33,10 @@ class Provider
             $driver->stateless();
         }
 
+        if (isset($this->config['scopes']) && is_array($this->config['scopes'])) {
+            $driver->scopes($this->config['scopes']);
+        }
+
         return $driver->user();
     }
 
